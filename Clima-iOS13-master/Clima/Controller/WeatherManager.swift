@@ -8,8 +8,15 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
+}
+
 struct WeatherManager {
     let weatherURL = "https://api.weatherapi.com/v1/current.json?key=73e8d9a15a934fc593075644231902&aqi=no"
+    
+    var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String){
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -25,22 +32,29 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(weatherData: safeData)
+                    if let weather = self.parseJSON(weatherData: safeData){
+                        self.delegate?.didUpdateWeather(self, weather: weather)
+                    }
                     
                 }
             }
             task.resume()
         }
-        
     }
     
-    func parseJSON(weatherData: Data) {
+    func parseJSON(weatherData: Data) -> WeatherModel?{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            print(decodedData.location.name)
+            let condition = decodedData.current.condition.text
+            let temperature = decodedData.current.temp_c
+            let city = decodedData.location.name
+
+            let weather = WeatherModel(condition: condition, cityName: city, temperature: temperature)
+            return weather
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
+            return nil
         }
     }
     
