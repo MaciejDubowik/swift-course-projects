@@ -11,6 +11,9 @@
 		0EA3086829F54A200054FD05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA3086729F54A200054FD05 /* ContentView.swift */; };
 		0EA3086A29F54A240054FD05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA3086929F54A240054FD05 /* Assets.xcassets */; };
 		0EA3086D29F54A240054FD05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA3086C29F54A240054FD05 /* Preview Assets.xcassets */; };
+		0EA3087529F54D470054FD05 /* Freehand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EA3087429F54D470054FD05 /* Freehand-Regular.ttf */; };
+		0EA3087829F550800054FD05 /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EA3087729F550800054FD05 /* Sacramento-Regular.ttf */; };
+		0EA3087C29F557440054FD05 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA3087B29F557440054FD05 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		0EA3086729F54A200054FD05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0EA3086929F54A240054FD05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EA3086C29F54A240054FD05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0EA3087429F54D470054FD05 /* Freehand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Freehand-Regular.ttf"; sourceTree = "<group>"; };
+		0EA3087629F54E2D0054FD05 /* Business-Card-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Business-Card-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0EA3087729F550800054FD05 /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
+		0EA3087B29F557440054FD05 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,11 @@
 		0EA3086429F54A200054FD05 /* Business Card */ = {
 			isa = PBXGroup;
 			children = (
+				0EA3087629F54E2D0054FD05 /* Business-Card-Info.plist */,
+				0EA3087329F54CF40054FD05 /* fonts */,
 				0EA3086529F54A200054FD05 /* Business_CardApp.swift */,
 				0EA3086729F54A200054FD05 /* ContentView.swift */,
+				0EA3087B29F557440054FD05 /* InfoView.swift */,
 				0EA3086929F54A240054FD05 /* Assets.xcassets */,
 				0EA3086B29F54A240054FD05 /* Preview Content */,
 			);
@@ -65,6 +75,15 @@
 				0EA3086C29F54A240054FD05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0EA3087329F54CF40054FD05 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0EA3087729F550800054FD05 /* Sacramento-Regular.ttf */,
+				0EA3087429F54D470054FD05 /* Freehand-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +146,8 @@
 			files = (
 				0EA3086D29F54A240054FD05 /* Preview Assets.xcassets in Resources */,
 				0EA3086A29F54A240054FD05 /* Assets.xcassets in Resources */,
+				0EA3087829F550800054FD05 /* Sacramento-Regular.ttf in Resources */,
+				0EA3087529F54D470054FD05 /* Freehand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EA3086829F54A200054FD05 /* ContentView.swift in Sources */,
+				0EA3087C29F557440054FD05 /* InfoView.swift in Sources */,
 				0EA3086629F54A200054FD05 /* Business_CardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +292,7 @@
 				DEVELOPMENT_TEAM = 5464LMAQBK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Business-Card-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +322,7 @@
 				DEVELOPMENT_TEAM = 5464LMAQBK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Business-Card-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
